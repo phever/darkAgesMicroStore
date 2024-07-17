@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body {
-	height: 100%;
+	min-height: 100%;
 }
 
 div.dt-container.dt-empty-footer tbody>tr:last-child>* {
@@ -16,14 +16,10 @@ div.dt-container.dt-empty-footer tbody>tr:last-child>* {
 	font-style: normal;
 }
 
-#popup {
-	left: 25%;
-}
-
 .tooltip {
 	@apply invisible absolute;
 	margin-top: -40px;
-	margin-left: -100px;
+	margin-left: -20px;
 }
 
 .has-tooltip:hover .tooltip {
