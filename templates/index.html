@@ -35,7 +35,7 @@
 				<thead>
 				<tr>
 					<th>Item</th>
-					<th>#</th>
+					<th>In Stock</th>
 					<th>Price</th>
 					<th>Description</th>
 				</tr>
@@ -44,7 +44,12 @@
 				{% for item in items %}
 					<tr>
 						<td class="flex items-center"><p>{{ item.name }}</p>&nbsp;<img src="{{ item.image }}" alt="{{ item.name }}"></td>
-						<td>{{ item.qty }}</td>
+						<td class="has-tooltip text-end">{% if item.qty > 0 %}{{ item.qty }}{% if item.to_order %}
+							<i class="fas fa-bag-shopping"></i><span class="tooltip rounded p-2 bg-blue-50 dark:bg-gray-800">I will hunt as many of these as you need</span>
+						{% endif %}
+						{% elif item.to_order %}
+							<i class="fas fa-bag-shopping"></i><span class="tooltip rounded p-2 bg-blue-50 dark:bg-gray-800">I will hunt as many of these as you need</span>
+						{% endif %}</td>
 						<td>{{ item.price|floatformat }} {{ item.get_units }}</td>
 						<td>{{ item.description }}</td>
 					</tr>

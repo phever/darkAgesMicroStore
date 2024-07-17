@@ -8,6 +8,7 @@ UNITS_CHOICES = (('G', 'Million Gold'),
 class StoreItem(models.Model):
     name = models.CharField(max_length=100)
     qty = models.IntegerField()
+    to_order = models.BooleanField(default=True)
     price = models.DecimalField(max_digits=5, decimal_places=2)
     units = models.CharField(max_length=2, choices=UNITS_CHOICES)
     description = models.TextField()

@@ -19,3 +19,13 @@ div.dt-container.dt-empty-footer tbody>tr:last-child>* {
 #popup {
 	left: 25%;
 }
+
+.tooltip {
+	@apply invisible absolute;
+	margin-top: -40px;
+	margin-left: -100px;
+}
+
+.has-tooltip:hover .tooltip {
+	@apply visible z-50
+}
