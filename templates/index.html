@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block content %}
-	<div class="flex flex-col justify-center items-center h-full bg-blue-100 text-black dark:text-gray-400 
+	<div class="flex flex-col justify-center items-center h-full bg-blue-100 text-black dark:text-gray-400
 	dark:bg-gray-800" id="content-block">
 
 		<div class="text-3xl">
 			<p class="permanent-marker-regular">Iglis.Shop</p>
 		</div>
-	
+
 		<div class="w-5/6 text-end mb-2">
 			{# Dark Mode Toggle button #}
 			<button type="button"
-			        class="relative rounded-full bg-blue-200 p-1 text-black hover:text-gray-700 focus:outline-none 
+			        class="relative rounded-full bg-blue-200 p-1 text-black hover:text-gray-700 focus:outline-none
 					        focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:bg-gray-950
 									dark:text-gray-400 dark:hover:text-white"
 			        onclick="toggleModal()">
@@ -21,7 +21,7 @@
 			</button>
 			{# Dark Mode Toggle button #}
 			<button type="button"
-			        class="relative rounded-full bg-blue-200 p-1 text-black hover:text-gray-700 focus:outline-none 
+			        class="relative rounded-full bg-blue-200 p-1 text-black hover:text-gray-700 focus:outline-none
 					        focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:bg-gray-950
 									dark:text-gray-400 dark:hover:text-white"
 			        onclick="toggleDarkMode()">
@@ -45,7 +45,7 @@
 					<tr>
 						<td class="flex items-center"><p>{{ item.name }}</p>&nbsp;<img src="{{ item.image }}" alt="{{ item.name }}"></td>
 						<td>{{ item.qty }}</td>
-						<td>{{ item.price }} {{ item.get_units }}</td>
+						<td>{{ item.price|floatformat }} {{ item.get_units }}</td>
 						<td>{{ item.description }}</td>
 					</tr>
 				{% endfor %}
