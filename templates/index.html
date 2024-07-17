@@ -5,7 +5,7 @@
 	<div class="flex flex-col justify-center items-center" id="content-block">
 
 		<div class="text-3xl mt-6">
-			<p class="permanent-marker-regular">Iglis.Shop</p>
+			<p class="permanent-marker-regular">{{ title }}</p>
 		</div>
 
 		<div class="w-5/6 text-end mb-2">
@@ -34,7 +34,7 @@
 				<thead>
 				<tr>
 					<th>Item</th>
-					<th>In Stock</th>
+					<th></th>
 					<th>Price</th>
 					<th>Description</th>
 				</tr>
@@ -42,16 +42,20 @@
 				<tbody>
 				{% for item in items %}
 					<tr>
-						<td class="flex items-center"><p>{{ item.name }}&nbsp;<img src="{{ item.image }}" alt="{{ item.name }}"></p>
+						<td class="flex items-center"><p>{{ item.name }}&nbsp;<img src="{{ item.image }}" alt="Picture of {{ item.name }}"></p>
 						</td>
-						<td class="has-tooltip text-end">{% if item.qty > 0 %}{{ item.qty }}{% if item.to_order %}
-							<i class="fas fa-bag-shopping"></i><span class="tooltip rounded p-2 bg-blue-50 dark:bg-gray-800">I will hunt as many of these as you need</span>
-						{% endif %}
-						{% elif item.to_order %}
-							<i class="fas fa-bag-shopping"></i><span class="tooltip rounded p-2 bg-blue-50 dark:bg-gray-800">I will hunt as many of these as you need</span>
-						{% else %}
-							{{ item.qty }}
-						{% endif %}</td>
+						<td class="has-tooltip text-end">
+							{% if item.qty > 0 %}
+								{{ item.qty }}
+								{% if item.to_order %}
+									<i class="fas fa-bag-shopping"></i><span class="tooltip rounded p-2 bg-blue-50 dark:bg-gray-800">I will hunt as many of these as you need</span>
+								{% endif %}
+							{% elif item.to_order %}
+								<i class="fas fa-bag-shopping"></i><span class="tooltip rounded p-2 bg-blue-50 dark:bg-gray-800">I will hunt as many of these as you need</span>
+							{% else %}
+								{{ item.qty }}
+							{% endif %}
+						</td>
 						<td>{{ item.price|floatformat }} {{ item.get_units }}</td>
 						<td>{{ item.description }}</td>
 					</tr>
@@ -62,7 +66,9 @@
 	</div>
 	<div id="modal" class="absolute left-0 top-0 w-full h-full hidden" onclick="toggleModal()">
 	</div>
-	<div class="absolute left-0 top-0 justify-center bg-blue-50 text-black dark:bg-gray-900 dark:text-gray-400 rounded hidden" id="popup">
+	<div
+			class="absolute left-0 top-0 justify-center bg-blue-50 text-black dark:bg-gray-900 dark:text-gray-400 rounded hidden"
+			id="popup">
 		<p class="p-4">If you want any of these items please hit up Iglis on Discord @<span class="font-extrabold">kryptosfang</span>
 		</p>
 	</div>

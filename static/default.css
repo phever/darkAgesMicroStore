@@ -747,7 +747,7 @@ div.dt-container.dt-empty-footer tbody>tr:last-child>* {
   visibility: hidden;
   position: absolute;
   margin-top: -40px;
-  margin-left: -20px;
+  margin-left: -130px;
 }
 
 .has-tooltip:hover .tooltip {

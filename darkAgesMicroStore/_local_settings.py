@@ -19,3 +19,5 @@ STATIC_ROOT = BASE_DIR / 'static'
 #STATICFILES_DIRS = [BASE_DIR / 'static']
 
 CSRF_TRUSTED_ORIGINS = ['website']
+
+STORE_TITLE = 'Phever.shop'
