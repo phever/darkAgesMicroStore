@@ -3,7 +3,7 @@
 
 {% block content %}
 	<div class="flex flex-col justify-center items-center h-full bg-blue-100 text-black dark:text-gray-400 
-	dark:bg-gray-800" id="content">
+	dark:bg-gray-800" id="content-block">
 
 		<div class="text-3xl">
 			<p class="permanent-marker-regular">Iglis.Shop</p>
@@ -53,9 +53,8 @@
 			</table>
 		</div>
 	</div>
-	<div id="modal" class="absolute left-0 top-0 w-full h-full hidden" onclick="toggleModal()">
-		<div class="fixed bg-blue-50 text-black dark:bg-gray-900 dark:text-gray-400 top-1/4 rounded" id="popup">
-				<p class="p-4">If you want any of these items please hit up Iglis on Discord @<span class="font-extrabold">kryptosfang</span></p>
-		</div>
+	<div id="modal" class="absolute left-0 top-0 w-full h-full hidden" onclick="toggleModal()"></div>
+	<div class="fixed bg-blue-50 text-black dark:bg-gray-900 dark:text-gray-400 top-1/4 rounded hidden" id="popup">
+		<p class="p-4">If you want any of these items please hit up Iglis on Discord @<span class="font-extrabold">kryptosfang</span></p>
 	</div>
 {% endblock %}

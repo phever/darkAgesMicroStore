@@ -21,6 +21,7 @@ function toggleDarkMode() {
 }
 
 function toggleModal() {
-    document.getElementById('content').classList.toggle('blur-sm');
+    document.getElementById('content-block').classList.toggle('blur-sm');
     document.getElementById('modal').classList.toggle('hidden');
+    document.getElementById('popup').classList.toggle('hidden');
 }
