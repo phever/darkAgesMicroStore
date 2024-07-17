@@ -42,7 +42,7 @@
 				<tbody>
 				{% for item in items %}
 					<tr>
-						<td class="flex items-center"><p>{{ item.name }}</p>&nbsp;<img src="{{ item.image }}" alt="{{ item.name }}">
+						<td class="flex items-center"><p>{{ item.name }}&nbsp;<img src="{{ item.image }}" alt="{{ item.name }}"></p>
 						</td>
 						<td class="has-tooltip text-end">{% if item.qty > 0 %}{{ item.qty }}{% if item.to_order %}
 							<i class="fas fa-bag-shopping"></i><span class="tooltip rounded p-2 bg-blue-50 dark:bg-gray-800">I will hunt as many of these as you need</span>
