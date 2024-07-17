@@ -43,12 +43,15 @@
 				<tbody>
 				{% for item in items %}
 					<tr>
-						<td class="flex items-center"><p>{{ item.name }}</p>&nbsp;<img src="{{ item.image }}" alt="{{ item.name }}"></td>
+						<td class="flex items-center"><p>{{ item.name }}</p>&nbsp;<img src="{{ item.image }}" alt="{{ item.name }}">
+						</td>
 						<td class="has-tooltip text-end">{% if item.qty > 0 %}{{ item.qty }}{% if item.to_order %}
 							<i class="fas fa-bag-shopping"></i><span class="tooltip rounded p-2 bg-blue-50 dark:bg-gray-800">I will hunt as many of these as you need</span>
 						{% endif %}
 						{% elif item.to_order %}
 							<i class="fas fa-bag-shopping"></i><span class="tooltip rounded p-2 bg-blue-50 dark:bg-gray-800">I will hunt as many of these as you need</span>
+						{% else %}
+							{{ item.qty }}
 						{% endif %}</td>
 						<td>{{ item.price|floatformat }} {{ item.get_units }}</td>
 						<td>{{ item.description }}</td>
@@ -60,6 +63,7 @@
 	</div>
 	<div id="modal" class="absolute left-0 top-0 w-full h-full hidden" onclick="toggleModal()"></div>
 	<div class="fixed bg-blue-50 text-black dark:bg-gray-900 dark:text-gray-400 top-1/4 rounded hidden" id="popup">
-		<p class="p-4">If you want any of these items please hit up Iglis on Discord @<span class="font-extrabold">kryptosfang</span></p>
+		<p class="p-4">If you want any of these items please hit up Iglis on Discord @<span class="font-extrabold">kryptosfang</span>
+		</p>
 	</div>
 {% endblock %}
