@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+	height: 100%;
+}
+
+div.dt-container.dt-empty-footer tbody>tr:last-child>* {
+	border-bottom: unset !important;
+}
+
+.permanent-marker-regular {
+	font-family: "Permanent Marker", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+
+#popup {
+	left: 25%;
+}
