@@ -6,12 +6,19 @@ html, body {
 	min-height: 100vh;
 }
 
-div.dt-container.dt-empty-footer tbody>tr:last-child>* {
-	border-bottom: unset !important;
+#popup {
+	max-width: 80vw;
 }
 
-.permanent-marker-regular {
+.permanent-marker {
 	font-family: "Permanent Marker", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.playwrite-be-vlg {
+	font-family: "Playwrite BE VLG", cursive;
+	font-optical-sizing: auto;
 	font-weight: 400;
 	font-style: normal;
 }

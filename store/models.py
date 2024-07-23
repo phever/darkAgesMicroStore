@@ -14,6 +14,7 @@ class StoreItem(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='static/images/')
     visible = models.BooleanField(default=True)
+    default_order = models.IntegerField(default=0)
 
     def get_units(self):
         if self.price == 0:
