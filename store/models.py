@@ -26,4 +26,10 @@ class StoreItem(models.Model):
         return ''
 
     def __str__(self):
-        return f'{self.name} [{self.qty}] @ {self.price} {self.get_units()}'
+        qty = self.qty
+        if self.to_order:
+            qty = '∞'
+        visible = ''
+        if not self.visible:
+            visible = 'HIDDEN - '
+        return f'{visible}{self.name} [{qty}] @ {self.price} {self.get_units()}'
