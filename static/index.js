@@ -25,4 +25,5 @@ DataTable.type('da-price', {
 
 $('#shop-table').DataTable({
     responsive: true,
+    order: [],
 });
