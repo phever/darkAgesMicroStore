@@ -1,10 +1,28 @@
 <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="modal">
 	<div class="flex items-center justify-center min-h-dvh">
 		<div class="inline-block align-center">
-			<div class="rounded bg-blue-50 text-black dark:bg-gray-700 dark:text-gray-400" id="popup">
-				<div class="header"><i class="fa fa-circle-xmark fa-lg p-0 m-1" onclick="toggleModal()"></i></div>
-				<p class="pb-3 ps-3 pe-3">If you want any of these items please hit up {{ name }} on Discord
-					<span class="font-extrabold">@{{ discord_handle }}</span></p>
+			<div class="rounded pb-1 bg-blue-50 text-black dark:bg-gray-700 dark:text-gray-400" id="popup">
+				<div class="header"><i class="fa fa-circle-xmark fa-lg p-0 ms-1 mt-3" onclick="toggleModal()"></i></div>
+				<div class="flex flex-row">
+					<p class="pb-3 ps-3 pe-3 pt-2">If you want any of these items please hit up {{ name }} on Discord
+						<span class="font-extrabold">@{{ discord_handle }}</span></p>
+				</div>
+				<div class="flex flex-row">
+					<p class="pb-3 ps-3 pe-3">Or via <strong>Dark Ages mail</strong> using the format:</p>
+				</div>
+				<div class="flex flex-row">
+					<p class="basis-0 ms-3 rounded p-1 mb-1 bg-gray-200 dark:bg-gray-800">Subject:</p>
+					<p class="basis-full ms-1 me-3 rounded p-1 mb-1 bg-gray-200 dark:bg-gray-800">
+						<code>
+							I would like to place an order through {{ name }}.shop!<br>
+						</code>
+					</p>
+				</div>
+				<p class="ms-3 me-3 rounded p-1 bg-gray-200 dark:bg-gray-800"><code>
+					1x Diamond Ore<br>
+					<br>
+					I've mailed the Gold Bars to {{ name }} already, I should receive my items within 24 hours!
+				</code></p>
 			</div>
 		</div>
 	</div>
