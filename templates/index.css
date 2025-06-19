@@ -1,34 +1,35 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-html, body {
-	min-height: 100vh;
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body {
+  min-height: 100vh;
 }
 
 #popup {
-	max-width: 80vw;
+  max-width: 80vw;
 }
 
 .permanent-marker {
-	font-family: "Permanent Marker", cursive;
-	font-weight: 400;
-	font-style: normal;
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .playwrite-be-vlg {
-	font-family: "Playwrite BE VLG", cursive;
-	font-optical-sizing: auto;
-	font-weight: 400;
-	font-style: normal;
+  font-family: "Playwrite BE VLG", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .tooltip {
-	@apply invisible absolute;
-	margin-top: -40px;
-	margin-left: -130px;
+  @apply invisible absolute;
+  margin-top: -40px;
+  margin-left: -130px;
 }
 
 .has-tooltip:hover .tooltip {
-	@apply visible z-50
+  @apply visible z-50;
 }
