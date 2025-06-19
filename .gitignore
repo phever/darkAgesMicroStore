@@ -345,4 +345,6 @@ pyrightconfig.json
 # MacOS folder file
 .DS_Store
 
+static/images
+
 # End of https://www.toptal.com/developers/gitignore/api/python,django
