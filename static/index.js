@@ -5,7 +5,7 @@ const USD_STRING = " USD";
 DataTable.type("da-price", {
   detect: function (data) {
     return typeof data === "string" &&
-      data.match(/(\d+)( Million Gold| Code| USD\(s\))/)
+      data.match(/(\d+)( Million Gold| Code\(s\)| USD)/)
       ? "da-price"
       : null;
   },
