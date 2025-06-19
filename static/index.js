@@ -3,12 +3,6 @@ const GOLD_STRING = " Million Gold";
 const USD_STRING = " USD";
 
 DataTable.type("da-price", {
-  detect: function (data) {
-    return typeof data === "string" &&
-      data.match(/(\d+)( Million Gold| Code\(s\)| USD)/)
-      ? "da-price"
-      : null;
-  },
   order: {
     pre: function (data) {
       if (data.includes(CODE_STRING)) {
@@ -23,7 +17,23 @@ DataTable.type("da-price", {
   className: "dt-da-price",
 });
 
+DataTable.type("qty", {
+  order: {
+    pre: function (data) {
+      if (typeof data === "string" && data.match(/.*None.*/)) return 0;
+      if (
+        typeof data === "string" &&
+        data.match(/.*I will hunt as many of these as you need*./)
+      )
+        return 9999;
+      return data;
+    },
+  },
+  className: "dt-qty",
+});
+
 $("#shop-table").DataTable({
   responsive: true,
   order: [],
+  columns: [null, { type: "qty" }, { type: "da-price" }, null],
 });
