@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="text-3xl mt-6">
+        <a class="{{ title_font_class }}" href="/">{{ title }}</a>
+    </div>
+    <div class="w-5/6 text-end mb-2">
+        {# Dark Mode Toggle button #}
+        <button type="button"
+                class="relative rounded-full bg-blue-200 p-1 text-black hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:bg-gray-950 dark:text-gray-400 dark:hover:text-white"
+                onclick="toggleModal()">
+            <span class="absolute -inset-1.5"></span>
+            <i class="w-6 fas fa-shopping-basket"></i>
+        </button>
+        {# Dark Mode Toggle button #}
+        <button type="button"
+                class="relative rounded-full bg-blue-200 p-1 text-black hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:bg-gray-950 dark:text-gray-400 dark:hover:text-white"
+                onclick="toggleDarkMode()">
+            <span class="absolute -inset-1.5"></span>
+            <i class="w-6 fas fa-sun"></i>
+        </button>
+    </div>
+    <div class="text-4xl mb-4">{{ custom_page.title }}</div>
+    {% for page in custom_page.content.all %}
+        <div class="bg-blue-200 dark:bg-gray-900 rounded text-center w-5/6 p-4 mb-1">
+            <div class="text-xl mb-4">{{ page.header }}</div>
+            <div class="mb-4">{{ page.content|safe }}</div>
+        </div>
+    {% endfor %}
+{% endblock %}

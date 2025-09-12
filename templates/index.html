@@ -2,8 +2,13 @@
 {% load static %}
 {% block content %}
     <div class="text-3xl mt-6">
-        <p class="{{ title_font_class }}">{{ title }}</p>
+        <a class="{{ title_font_class }}" href="/">{{ title }}</a>
     </div>
+    {% for link in custom_pages %}
+        <div>
+            <a href="/{{ link.slug }}">{{ link.button_text }}</a>
+        </div>
+    {% endfor %}
     <div class="w-5/6 text-end mb-2">
         {# Dark Mode Toggle button #}
         <button type="button"

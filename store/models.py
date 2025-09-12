@@ -4,6 +4,25 @@ from django.db import models
 UNITS_CHOICES = (("G", "Million Gold"), ("C", "Code(s)"), ("D", "USD"))
 
 
+class CustomPageBlock(models.Model):
+    content = models.TextField()
+    header = models.CharField(max_length=100, blank=True)
+    page = models.ForeignKey("CustomPage", on_delete=models.CASCADE, related_name="content")
+
+    def __str__(self):
+        return self.header if self.header else self.content[:25]
+
+
+class CustomPage(models.Model):
+    title = models.CharField(max_length=100)
+    button_text = models.CharField(max_length=50)
+    last_updated = models.DateTimeField(auto_now=True)
+    slug = models.SlugField(unique=True)
+
+    def __str__(self):
+        return self.title
+
+
 class StoreItem(models.Model):
     name = models.CharField(max_length=100)
     qty = models.IntegerField()
